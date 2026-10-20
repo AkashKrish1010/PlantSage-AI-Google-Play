@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — PlantSage AI</title>
+  <meta name="description" content="Official Privacy Policy and Data Safety disclosures for PlantSage AI, compliant with Google Play Store User Data policies, GDPR, and CCPA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-dark: #047857;
+      --primary-light: #d1fae5;
+      --accent: #10b981;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --heading: #064e3b;
+      --radius: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 20px -2px rgba(5, 150, 105, 0.08), 0 2px 6px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation Header */
+    .header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--surface-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--heading);
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    }
+
+    .brand-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #064e3b;
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(180deg, #ecfdf5 0%, #f8fafc 100%);
+      padding: 3.5rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: white;
+      border: 1px solid #a7f3d0;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #047857;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #064e3b;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .meta-bar {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .meta-bar strong {
+      color: var(--text);
+    }
+
+    /* Main Content Layout */
+    .main-container {
+      max-width: 1100px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* Sidebar Table of Contents */
+    .sidebar {
+      position: sticky;
+      top: 90px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sidebar-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .toc-link {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .toc-link:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding-left: 16px;
+    }
+
+    /* Document Body */
+    .content {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+      scroll-margin-top: 100px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #064e3b;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #334155;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Custom Highlight Box */
+    .callout {
+      background: #f0fdf4;
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.5rem 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: #065f46;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout p {
+      color: #166534;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Google Play Data Safety Table */
+    .data-table-wrapper {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--surface-border);
+      color: #475569;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-collected {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .badge-optional {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .badge-encrypted {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    /* Footer */
+    footer {
+      background: #064e3b;
+      color: #d1fae5;
+      padding: 3rem 1.5rem 2rem;
+      margin-top: 5rem;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-bottom: 1px solid #047857;
+      padding-bottom: 2rem;
+    }
+
+    .footer-copy {
+      max-width: 1100px;
+      margin: 1.5rem auto 0;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #6ee7b7;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .main-container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: none;
+      }
+      .content {
+        padding: 1.75rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation (Standalone - No Cross Links) -->
+  <header class="header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo">🌿</div>
+        <div class="brand-text">
+          <h1>PlantSage AI</h1>
+          <span>Botanical Health & Diagnostics</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span>🛡️</span> Google Play Store & GDPR Compliant
+    </div>
+    <h2>Privacy Policy</h2>
+    <p>We believe in transparent, privacy-first plant science. Learn how your data is handled, stored, and protected.</p>
+    <div class="meta-bar">
+      <span><strong>Application:</strong> PlantSage AI</span>
+      <span><strong>Package Name:</strong> com.plantsage.ai</span>
+      <span><strong>Effective Date:</strong> October 20, 2026</span>
+    </div>
+  </section>
+
+  <!-- Content Container -->
+  <main class="main-container">
+    
+    <!-- Sidebar TOC -->
+    <aside class="sidebar">
+      <div class="sidebar-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#introduction" class="toc-link">1. Introduction</a></li>
+        <li><a href="#data-collection" class="toc-link">2. Information We Collect</a></li>
+        <li><a href="#camera-photos" class="toc-link">3. Camera & Photos</a></li>
+        <li><a href="#location-data" class="toc-link">4. Location Information</a></li>
+        <li><a href="#how-we-use-data" class="toc-link">5. How We Use Data</a></li>
+        <li><a href="#third-parties" class="toc-link">6. Third-Party Services</a></li>
+        <li><a href="#data-safety" class="toc-link">7. Google Play Data Safety</a></li>
+        <li><a href="#retention-deletion" class="toc-link">8. Retention & Deletion Rights</a></li>
+        <li><a href="#children" class="toc-link">9. Children's Privacy</a></li>
+        <li><a href="#security" class="toc-link">10. Data Security</a></li>
+        <li><a href="#contact" class="toc-link">11. Contact Us</a></li>
+      </ul>
+    </aside>
+
+    <!-- Document Body -->
+    <article class="content">
+      
+      <!-- 1. Introduction -->
+      <section id="introduction" class="section">
+        <h3>1. Introduction</h3>
+        <p>Welcome to <strong>PlantSage AI</strong> (package: <code>com.plantsage.ai</code>). This Privacy Policy explains how our mobile application and related services collect, use, disclose, and safeguard your personal information when you use our Android application.</p>
+        <p>By downloading, installing, or using PlantSage AI, you agree to the collection and use of information in accordance with this policy. If you do not agree with this policy, please do not use the application.</p>
+        <div class="callout">
+          <div class="callout-title">🔒 Our Core Privacy Commitment</div>
+          <p>We do not sell, rent, or monetize your personal data or photos. Plant photographs are analyzed solely to provide plant disease identification, botanical classifications, and herbal care remedies.</p>
+        </div>
+      </section>
+
+      <!-- 2. Information We Collect -->
+      <section id="data-collection" class="section">
+        <h3>2. Information We Collect</h3>
+        <p>We collect only the minimal data necessary to deliver accurate plant pathology diagnoses and personalized garden management:</p>
+
+        <h4>A. Information You Voluntarily Provide</h4>
+        <ul>
+          <li><strong>Account Information:</strong> When you register an account or log in via Google Sign-In, we collect your name, email address, and profile picture (if provided by Google).</li>
+          <li><strong>Saved Plants & Garden Data:</strong> Custom plant notes, disease remedies saved to your personal library, and timestamps of your plant health checks.</li>
+          <li><strong>User Inquiries:</strong> Any feedback, bug reports, or support tickets you submit directly to us.</li>
+        </ul>
+
+        <h4>B. Information Automatically Collected</h4>
+        <ul>
+          <li><strong>Device & System Data:</strong> Device model, operating system version (Android), unique device identifiers, language settings, and app performance logs to diagnose crashes.</li>
+          <li><strong>Diagnostic & Usage Telemetry:</strong> Anonymized metrics on feature usage, model inference latency, and error logs to enhance app stability.</li>
+        </ul>
+      </section>
+
+      <!-- 3. Camera & Photos -->
+      <section id="camera-photos" class="section">
+        <h3>3. Camera & Photos (Core Functional Feature)</h3>
+        <p>PlantSage AI is an AI-powered botanical identification tool. To fulfill its primary functionality, the app requests access to:</p>
+        <ul>
+          <li><strong>Camera (<code>android.permission.CAMERA</code>):</strong> Used exclusively in real-time when you choose to take a photo of a plant leaf or medicinal herb for identification.</li>
+          <li><strong>Photo Library / Storage:</strong> Used only when you choose to import an existing plant photo from your device's gallery.</li>
+        </ul>
+        <p><strong>Processing Policy:</strong> Photos are processed using our on-device TensorFlow Lite neural network or sent over an encrypted HTTPS connection to our secure FastAPI inference server to return classification scores. We do not inspect personal or non-botanical photos from your gallery.</p>
+      </section>
+
+      <!-- 4. Location Data -->
+      <section id="location-data" class="section">
+        <h3>4. Location Information</h3>
+        <p>The app requests location permissions (<code>ACCESS_FINE_LOCATION</code> and <code>ACCESS_COARSE_LOCATION</code>) for the following specific in-app features:</p>
+        <ul>
+          <li><strong>"Save to Garden" Discovery Tagging:</strong> Saving the geographic coordinates (latitude, longitude, and optional reverse-geocoded address) of where a medicinal or garden plant was spotted.</li>
+          <li><strong>Environmental Context (Air Quality & Weather):</strong> Fetching localized ambient conditions to assess plant stress and outdoor growing recommendations.</li>
+        </ul>
+        <div class="callout">
+          <div class="callout-title">📍 No Background Tracking</div>
+          <p>Location data is accessed <strong>only in the foreground while the feature is actively in use</strong>. We never track or record your location in the background when the app is closed.</p>
+        </div>
+      </section>
+
+      <!-- 5. How We Use Data -->
+      <section id="how-we-use-data" class="section">
+        <h3>5. How We Use Your Data</h3>
+        <p>We use the collected information for specific, lawful purposes:</p>
+        <ul>
+          <li>To diagnose plant pathogens and provide organic, biological, and chemical treatment plans.</li>
+          <li>To identify medicinal plant species and display botanical profiles and traditional herbal formulations.</li>
+          <li>To synchronize your saved plants, scans, and notes across your devices.</li>
+          <li>To maintain user accounts, authenticate logins, and protect against fraudulent activity.</li>
+          <li>To monitor app health, resolve crashes, and optimize machine learning model accuracy.</li>
+        </ul>
+      </section>
+
+      <!-- 6. Third-Party Services -->
+      <section id="third-parties" class="section">
+        <h3>6. Third-Party Services & SDKs</h3>
+        <p>We work with trusted third-party service providers that adhere to strict data privacy requirements:</p>
+        <ul>
+          <li><strong>Google Play Services:</strong> Core application dependencies and security integrity. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+          <li><strong>Google Sign-In:</strong> Secure authentication handling via OAuth 2.0 without ever accessing your Google account password.</li>
+          <li><strong>Google Maps API:</strong> Visualizing plant discovery markers on your personal garden map.</li>
+          <li><strong>Google Gemini API:</strong> Generative AI assistance for detailed botanical advice, organic remedy formulations, and dosage guidelines.</li>
+          <li><strong>Inference & Cloud Backend:</strong> Secure API backend for machine learning inference and encrypted database synchronization.</li>
+        </ul>
+      </section>
+
+      <!-- 7. Google Play Data Safety Table -->
+      <section id="data-safety" class="section">
+        <h3>7. Google Play Data Safety Disclosures</h3>
+        <p>For complete transparency in accordance with the Google Play Store Data Safety form:</p>
+
+        <div class="data-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Data Type</th>
+                <th>Collected / Shared</th>
+                <th>Purpose</th>
+                <th>Handling & Security</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Name & Email</strong></td>
+                <td><span class="badge badge-collected">Collected</span></td>
+                <td>Account Management & Auth</td>
+                <td><span class="badge badge-encrypted">Encrypted in transit</span></td>
+              </tr>
+              <tr>
+                <td><strong>Photos / Images</strong></td>
+                <td><span class="badge badge-collected">Collected</span></td>
+                <td>App Functionality (Plant Diagnosis)</td>
+                <td><span class="badge badge-encrypted">Encrypted in transit</span></td>
+              </tr>
+              <tr>
+                <td><strong>Precise Location</strong></td>
+                <td><span class="badge badge-optional">Optional</span></td>
+                <td>Tagging plant discovery locations</td>
+                <td><span class="badge badge-encrypted">User-initiated only</span></td>
+              </tr>
+              <tr>
+                <td><strong>Crash Logs / Diagnostics</strong></td>
+                <td><span class="badge badge-collected">Collected</span></td>
+                <td>Analytics & Bug Diagnostics</td>
+                <td><span class="badge badge-encrypted">Anonymized</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Note:</strong> PlantSage AI does NOT share user personal data with third-party advertisers or data brokers.</p>
+      </section>
+
+      <!-- 8. Retention & Deletion Rights -->
+      <section id="retention-deletion" class="section">
+        <h3>8. Data Retention & User Rights</h3>
+        <p>We retain your personal data and saved plant library for as long as your account remains active. You maintain full ownership and control over your data at all times.</p>
+        
+        <h4>Your Rights:</h4>
+        <ul>
+          <li><strong>Access & Export:</strong> Request a copy of your stored personal data.</li>
+          <li><strong>Correction:</strong> Update or correct your profile details anytime in-app.</li>
+          <li><strong>Permanent Erasure:</strong> You have the right to request permanent deletion of your account and all associated personal data.</li>
+        </ul>
+
+        <div class="callout">
+          <div class="callout-title">🔒 Account & Data Control</div>
+          <p>You can request complete account and data deletion at any time directly through the app settings or by contacting our data privacy desk at <a href="mailto:support@plantsage.ai" style="color: #065f46; font-weight: 700; text-decoration: underline;">support@plantsage.ai</a>.</p>
+        </div>
+      </section>
+
+      <!-- 9. Children's Privacy -->
+      <section id="children" class="section">
+        <h3>9. Children's Privacy (COPPA / GDPR)</h3>
+        <p>PlantSage AI does not target, market to, or knowingly collect personal identifiable information from children under the age of 13 (or under 16 in certain European jurisdictions). If we become aware that personal information has been collected from a child without verified parental consent, we take immediate steps to remove the data and terminate the account.</p>
+      </section>
+
+      <!-- 10. Security -->
+      <section id="security" class="section">
+        <h3>10. Data Security</h3>
+        <p>We implement industry-standard administrative, technical, and physical security measures to safeguard your information. All communications between the mobile application and backend services are encrypted using TLS/HTTPS protocols. Passwords and sensitive authentication tokens are hashed using secure cryptographic algorithms.</p>
+      </section>
+
+      <!-- 11. Contact -->
+      <section id="contact" class="section">
+        <h3>11. Contact Information</h3>
+        <p>If you have questions, feedback, or requests regarding this Privacy Policy or your personal information, please contact our Data Protection Officer at:</p>
+        
+        <div style="background: #f8fafc; border: 1px solid var(--surface-border); border-radius: 12px; padding: 1.25rem; margin-top: 1rem;">
+          <p style="margin-bottom: 0.25rem;"><strong>Project:</strong> PlantSage AI</p>
+          <p style="margin-bottom: 0.25rem;"><strong>Developer Team:</strong> PlantSage AI Team</p>
+          <p style="margin-bottom: 0;"><strong>Support Email:</strong> <a href="mailto:support@plantsage.ai" style="color: var(--primary); font-weight: 600;">support@plantsage.ai</a></p>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h4 style="color: white; margin: 0 0 0.5rem;">PlantSage AI</h4>
+        <p style="font-size: 0.875rem; color: #a7f3d0; margin: 0;">Botanical plant identification & health management.</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 PlantSage AI. All rights reserved. Compliant with Google Play Store Policies.
+    </div>
+  </footer>
+
+</body>
+</html>

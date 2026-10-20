@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account & Data Deletion — PlantSage AI</title>
+  <meta name="description" content="Request permanent account and personal data deletion for PlantSage AI, compliant with Google Play Store Data Safety requirements.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-dark: #047857;
+      --primary-light: #d1fae5;
+      --danger: #dc2626;
+      --danger-dark: #b91c1c;
+      --danger-light: #fee2e2;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --heading: #064e3b;
+      --radius: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 20px -2px rgba(5, 150, 105, 0.08), 0 2px 6px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation Header */
+    .header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--surface-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--heading);
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    }
+
+    .brand-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #064e3b;
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(180deg, #fef2f2 0%, #f8fafc 100%);
+      padding: 3.5rem 1.5rem 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: white;
+      border: 1px solid #fecaca;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--danger);
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: #7f1d1d;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .meta-bar {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .meta-bar strong {
+      color: var(--text);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 950px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    .grid-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-header-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 1.25rem;
+    }
+
+    .icon-mobile {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .icon-web {
+      background: #fef2f2;
+      color: var(--danger);
+    }
+
+    .card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: #475569;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Steps list */
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+    }
+
+    .steps-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.925rem;
+      color: #334155;
+    }
+
+    .step-num {
+      width: 24px;
+      height: 24px;
+      background: #e2e8f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #475569;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Web Deletion Form Section */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 2.5rem;
+    }
+
+    .form-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #7f1d1d;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 0.975rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    .input-field, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: white;
+      transition: all 0.2s ease;
+    }
+
+    .input-field:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      padding: 1rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      cursor: pointer;
+      accent-color: var(--danger);
+    }
+
+    .checkbox-label {
+      font-size: 0.875rem;
+      color: #9f1239;
+      line-height: 1.5;
+    }
+
+    .btn-delete {
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      background: var(--danger);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+    }
+
+    .btn-delete:hover {
+      background: var(--danger-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-delete:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    /* Data Safety Disclosures Section */
+    .disclosure-box {
+      background: #f8fafc;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .disclosure-box h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #064e3b;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .data-pill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .data-col {
+      background: white;
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .data-col-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .title-deleted {
+      color: var(--danger);
+    }
+
+    .title-retained {
+      color: #475569;
+    }
+
+    .data-col ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: #334155;
+    }
+
+    .data-col li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Success / Feedback Alert */
+    .alert-success {
+      display: none;
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+
+    .alert-success h4 {
+      color: #065f46;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .alert-success p {
+      color: #047857;
+      font-size: 0.925rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tracking-code {
+      display: inline-block;
+      padding: 4px 10px;
+      background: white;
+      border: 1px dashed #059669;
+      border-radius: 6px;
+      font-family: monospace;
+      font-weight: 700;
+      color: #047857;
+    }
+
+    /* Footer */
+    footer {
+      background: #064e3b;
+      color: #d1fae5;
+      padding: 3rem 1.5rem 2rem;
+      margin-top: 5rem;
+    }
+
+    .footer-container {
+      max-width: 950px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-bottom: 1px solid #047857;
+      padding-bottom: 2rem;
+    }
+
+    .footer-copy {
+      max-width: 950px;
+      margin: 1.5rem auto 0;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #6ee7b7;
+    }
+
+    @media (max-width: 768px) {
+      .grid-options, .data-pill-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-card {
+        padding: 1.75rem;
+      }
+      .hero h2 {
+        font-size: 1.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation (Standalone - No Cross Links) -->
+  <header class="header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo">🌿</div>
+        <div class="brand-text">
+          <h1>PlantSage AI</h1>
+          <span>Botanical Health & Diagnostics</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span>⚠️</span> Google Play Store Data Safety Requirement
+    </div>
+    <h2>Account & Data Deletion Portal</h2>
+    <p>We respect your right to be forgotten. Request the permanent erasure of your account, saved plants, and personal records.</p>
+    <div class="meta-bar">
+      <span><strong>Application:</strong> PlantSage AI</span>
+      <span><strong>Package:</strong> com.plantsage.ai</span>
+      <span><strong>Timeline:</strong> Processed within 14 to 30 days</span>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Two Ways To Delete -->
+    <div class="grid-options">
+      <!-- In-App Method -->
+      <div class="card">
+        <div class="card-header-icon icon-mobile">📱</div>
+        <h3>Method 1: In-App (Instant)</h3>
+        <p>If you currently have the PlantSage AI app installed on your Android device, you can delete your account immediately:</p>
+        <ol class="steps-list">
+          <li>
+            <span class="step-num">1</span>
+            <span>Open <strong>PlantSage AI</strong> on your device.</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span>Navigate to <strong>Profile</strong> or <strong>Settings</strong>.</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span>Tap <strong>Account Security & Privacy</strong>.</span>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <span>Select <strong>"Delete My Account"</strong> and confirm with your password or authentication prompt.</span>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Web Request Method -->
+      <div class="card">
+        <div class="card-header-icon icon-web">🌐</div>
+        <h3>Method 2: Web Request Portal</h3>
+        <p>If you uninstalled the app, lost access to your device, or signed in using Google OAuth, submit the form below.</p>
+        <p style="font-size: 0.875rem; color: #64748b;">
+          In accordance with Google Play Store User Data policies, this web submission allows users to purge all associated data without requiring the mobile application to be installed.
+        </p>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--surface-border); font-size: 0.85rem; color: #047857; font-weight: 600;">
+          ✓ Fully compliant with Play Console Account Deletion URL guidelines
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Deletion Request Form -->
+    <div class="form-card">
+      <div class="form-title">
+        <span>🗑️</span> Submit Account Deletion Request
+      </div>
+      <p class="form-subtitle">
+        Fill out your registered credentials. Once verified, all profile records, photo uploads, and saved botanical data will be permanently wiped.
+      </p>
+
+      <form id="deletionForm" onsubmit="handleDeletionSubmit(event)">
+        
+        <div class="form-group">
+          <label for="fullName">Full Name (as displayed in app)</label>
+          <input type="text" id="fullName" class="input-field" placeholder="e.g. Alex Johnson" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Registered Email Address *</label>
+          <input type="email" id="email" class="input-field" placeholder="name@example.com" required>
+          <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 4px; display: block;">
+            Must match the email used to register or the email tied to your Google Sign-In.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="loginMethod">Account Sign-In Method</label>
+          <select id="loginMethod" class="input-field">
+            <option value="google">Google Sign-In (@gmail.com)</option>
+            <option value="email">Email & Password</option>
+            <option value="unknown">Not Sure / Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason for leaving (Optional)</label>
+          <select id="reason" class="input-field">
+            <option value="no_longer_needed">No longer cultivating or identifying plants</option>
+            <option value="privacy_concerns">Privacy or data storage concerns</option>
+            <option value="switching_device">Switching device or platform</option>
+            <option value="other">Other reason</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Details / Comments (Optional)</label>
+          <textarea id="notes" rows="3" class="input-field" placeholder="Provide any extra details if needed..."></textarea>
+        </div>
+
+        <!-- Confirmation Checkbox -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="confirmCheckbox" required>
+          <label for="confirmCheckbox" class="checkbox-label">
+            <strong>I acknowledge and confirm:</strong> Permanent account deletion is irrevocable. All saved plants, disease history, discovery coordinates, and bookmarks will be purged and cannot be recovered.
+          </label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-delete">
+          <span>Confirm & Submit Deletion Request</span> &rarr;
+        </button>
+
+      </form>
+
+      <!-- Success Notification Box -->
+      <div id="successAlert" class="alert-success">
+        <h4>✅ Request Acknowledged</h4>
+        <p>Your deletion ticket has been registered. Reference Code: <span class="tracking-code" id="ticketId">DEL-2026-XXXX</span></p>
+        <p>A confirmation email request has been prepared for dispatch to our support desk. If your default mail client did not open automatically, please click below to send the verification email from your registered address:</p>
+        <a id="emailDispatchLink" href="#" style="display: inline-block; margin-top: 8px; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid #059669; text-decoration: none; font-weight: 600; font-size: 0.875rem; background: white; color: #047857;">
+          Open Mail App to Complete Verification &rarr;
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Data Safety & Retention Disclosure -->
+    <div class="disclosure-box">
+      <h4>📋 What Happens to Your Data? (Google Play Data Safety Disclosure)</h4>
+      <p style="color: #475569; font-size: 0.95rem;">
+        When an account deletion request is processed, our systems execute the following data hygiene protocol:
+      </p>
+
+      <div class="data-pill-grid">
+        <!-- Deleted Data -->
+        <div class="data-col">
+          <div class="data-col-title title-deleted">
+            <span>❌</span> Permanently Deleted
+          </div>
+          <ul>
+            <li>• User profile, name, email, profile photo</li>
+            <li>• Password hashes and active authentication tokens</li>
+            <li>• Saved Plants list and botanical notes</li>
+            <li>• Plant leaf images and diagnostic scan logs</li>
+            <li>• Geolocation coordinates (latitude & longitude)</li>
+          </ul>
+        </div>
+
+        <!-- Retained Data -->
+        <div class="data-col">
+          <div class="data-col-title title-retained">
+            <span>🛡️</span> Retained (Legal / Anonymized)
+          </div>
+          <ul>
+            <li>• Anonymized statistical usage counts (no user identity)</li>
+            <li>• Web server access logs kept for cybersecurity (purged automatically after 30 days)</li>
+            <li>• Financial transaction invoices (only if premium purchase was made, per tax law)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h4 style="color: white; margin: 0 0 0.5rem;">PlantSage AI</h4>
+        <p style="font-size: 0.875rem; color: #a7f3d0; margin: 0;">Official User Data & Account Management Portal</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 PlantSage AI. All rights reserved. Compliant with Google Play Store Policies.
+    </div>
+  </footer>
+
+  <script>
+    function handleDeletionSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const method = document.getElementById('loginMethod').value;
+      const reason = document.getElementById('reason').value;
+      const notes = document.getElementById('notes').value.trim();
+      const confirmed = document.getElementById('confirmCheckbox').checked;
+
+      if (!name || !email || !confirmed) {
+        alert("Please complete all required fields and check the confirmation box.");
+        return;
+      }
+
+      // Generate a reproducible client-side reference tracking ID
+      const randomPart = Math.floor(1000 + Math.random() * 9000);
+      const ticket = "DEL-" + new Date().getFullYear() + "-" + randomPart;
+
+      // Prepare mailto dispatch
+      const subject = encodeURIComponent("[Account Deletion Request] - " + ticket + " - " + email);
+      const body = encodeURIComponent(
+        "Hello PlantSage AI Support,\n\n" +
+        "I request the permanent deletion of my account and all associated personal data from PlantSage AI (com.plantsage.ai).\n\n" +
+        "--- ACCOUNT DETAILS ---\n" +
+        "Ticket Reference: " + ticket + "\n" +
+        "Full Name: " + name + "\n" +
+        "Registered Email: " + email + "\n" +
+        "Sign-in Method: " + method + "\n" +
+        "Reason: " + reason + "\n" +
+        (notes ? "Notes: " + notes + "\n" : "") +
+        "\nI understand that this action is permanent and cannot be undone.\n\n" +
+        "Regards,\n" + name
+      );
+
+      const mailtoUrl = "mailto:support@plantsage.ai?subject=" + subject + "&body=" + body;
+
+      // Show success alert
+      document.getElementById('ticketId').innerText = ticket;
+      document.getElementById('emailDispatchLink').href = mailtoUrl;
+      document.getElementById('successAlert').style.display = 'block';
+      document.getElementById('submitBtn').disabled = true;
+      document.getElementById('submitBtn').innerText = "Request Registered (" + ticket + ")";
+
+      // Attempt to launch mailto client automatically for frictionless user action
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 500);
+    }
+  </script>
+
+</body>
+</html>
